@@ -109,10 +109,10 @@ def train_best_model(
     return None
 
 
-@flow
+@flow(log_prints=True)
 def main_flow(
-    train_path: str = "./data/green_tripdata_2021-01.parquet",
-    val_path: str = "./data/green_tripdata_2021-02.parquet",
+    train_path: str = "/home/yassinfahmy/mlops-training/data/green_tripdata_2023-01.parquet",
+    val_path: str = "/home/yassinfahmy/mlops-training/data/green_tripdata_2024-01.parquet",
 ) -> None:
     """The main training pipeline"""
 
@@ -132,4 +132,4 @@ def main_flow(
 
 
 if __name__ == "__main__":
-    main_flow()
+    main_flow.serve(name="my-first-deployment")
